@@ -1,0 +1,1605 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>B. Sabir | Professeur de Mathématiques</title>
+
+<meta name="description"
+content="Portfolio de B. Sabir, professeur de mathématiques au collège, spécialisé dans la création de contenus numériques et d'applications éducatives.">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --primary:#16a085;
+    --secondary:#0f766e;
+    --dark:#102a43;
+    --text:#334e68;
+    --light:#f5f9fc;
+    --white:#ffffff;
+    --yellow:#f4c542;
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:var(--text);
+    background:var(--white);
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:90%;
+    max-width:1150px;
+    margin:auto;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+    box-shadow:0 2px 15px rgba(0,0,0,.06);
+}
+
+.navbar{
+    height:72px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:var(--primary);
+}
+
+.logo span{
+    color:var(--dark);
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+    list-style:none;
+}
+
+.nav-links a{
+    font-size:15px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--primary);
+}
+
+.menu-btn{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:
+        linear-gradient(135deg,#f1fbf9,#ffffff 60%);
+    padding-top:72px;
+}
+
+.hero-content{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:60px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-block;
+    background:#e5f7f3;
+    color:var(--secondary);
+    padding:8px 16px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:58px;
+    line-height:1.1;
+    color:var(--dark);
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:var(--primary);
+}
+
+.hero p{
+    font-size:19px;
+    max-width:650px;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:13px 24px;
+    border-radius:10px;
+    font-weight:bold;
+    transition:.3s;
+    display:inline-block;
+}
+
+.btn-primary{
+    background:var(--primary);
+    color:white;
+}
+
+.btn-primary:hover{
+    background:var(--secondary);
+    transform:translateY(-2px);
+}
+
+.btn-outline{
+    border:2px solid var(--primary);
+    color:var(--primary);
+}
+
+.btn-outline:hover{
+    background:var(--primary);
+    color:white;
+}
+
+/* HERO CARD */
+
+.hero-card{
+    position:relative;
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:var(--shadow);
+    text-align:center;
+}
+
+.math-symbol{
+    width:150px;
+    height:150px;
+    margin:auto auto 25px;
+    border-radius:50%;
+    background:#e7f8f5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:70px;
+    color:var(--primary);
+    font-weight:bold;
+}
+
+.hero-card h3{
+    color:var(--dark);
+    font-size:23px;
+    margin-bottom:8px;
+}
+
+.hero-card p{
+    font-size:15px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    padding:90px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-title span{
+    color:var(--primary);
+    font-weight:bold;
+    font-size:14px;
+    text-transform:uppercase;
+}
+
+.section-title h2{
+    color:var(--dark);
+    font-size:38px;
+    margin-top:8px;
+}
+
+.section-title p{
+    max-width:650px;
+    margin:10px auto;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    background:var(--light);
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-box{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+}
+
+.about-box h3{
+    color:var(--dark);
+    font-size:25px;
+    margin-bottom:15px;
+}
+
+.about-list{
+    list-style:none;
+    margin-top:20px;
+}
+
+.about-list li{
+    padding:10px 0;
+    border-bottom:1px solid #eee;
+}
+
+.about-list strong{
+    color:var(--dark);
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.service-card{
+    padding:30px;
+    border-radius:18px;
+    background:white;
+    box-shadow:var(--shadow);
+    border:1px solid #eef3f5;
+    transition:.3s;
+}
+
+.service-card:hover{
+    transform:translateY(-7px);
+}
+
+.icon{
+    width:60px;
+    height:60px;
+    border-radius:15px;
+    background:#e8f8f5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.service-card h3{
+    color:var(--dark);
+    margin-bottom:10px;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects{
+    background:var(--light);
+}
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.project-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    transition:.3s;
+}
+
+.project-card:hover{
+    transform:translateY(-5px);
+}
+
+.project-image{
+    height:180px;
+    background:linear-gradient(135deg,#16a085,#0f766e);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:55px;
+}
+
+.project-content{
+    padding:25px;
+}
+
+.project-content h3{
+    color:var(--dark);
+    margin-bottom:10px;
+}
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-top:15px;
+}
+
+.tag{
+    background:#e9f7f5;
+    color:var(--secondary);
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:12px;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+    background:var(--dark);
+    color:white;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    text-align:center;
+}
+
+.stat h3{
+    font-size:42px;
+    color:var(--yellow);
+}
+
+.stat p{
+    color:#d9e5ec;
+}
+
+/* =========================
+   VIDEOS
+========================= */
+
+.video-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.video-card{
+    border-radius:18px;
+    overflow:hidden;
+    background:white;
+    box-shadow:var(--shadow);
+}
+
+.video-thumb{
+    height:180px;
+    background:#dff5f1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:50px;
+}
+
+.video-content{
+    padding:20px;
+}
+
+.video-content h3{
+    color:var(--dark);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    background:var(--light);
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.contact-info{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.contact-item{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:var(--shadow);
+}
+
+.contact-item strong{
+    color:var(--dark);
+    display:block;
+    margin-bottom:4px;
+}
+
+.contact-form{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:6px;
+    font-weight:bold;
+    color:var(--dark);
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-family:inherit;
+}
+
+.form-group textarea{
+    height:130px;
+    resize:none;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#0b1f33;
+    color:white;
+    padding:35px 0;
+    text-align:center;
+}
+
+.socials{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin:15px 0;
+}
+
+.socials a{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:#163650;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:.3s;
+}
+
+.socials a:hover{
+    background:var(--primary);
+}
+
+/* =========================
+   SCROLL TOP
+========================= */
+
+#topBtn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:var(--primary);
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    display:none;
+    z-index:999;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .hero-content,
+    .about-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding:120px 0 70px;
+    }
+
+    .hero h1{
+        font-size:44px;
+    }
+
+    .services-grid,
+    .projects-grid,
+    .video-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .nav-links{
+        position:absolute;
+        top:72px;
+        left:0;
+        width:100%;
+        background:white;
+        flex-direction:column;
+        text-align:center;
+        padding:20px;
+        display:none;
+        box-shadow:0 10px 20px rgba(0,0,0,.08);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:37px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .section-title h2{
+        font-size:30px;
+    }
+
+    .services-grid,
+    .projects-grid,
+    .video-grid,
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:70px 0;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header>
+
+<div class="container navbar">
+
+<a href="#" class="logo">
+B.<span>Sabir</span>
+</a>
+
+<nav>
+<ul class="nav-links" id="navLinks">
+
+<li><a href="#accueil">Accueil</a></li>
+<li><a href="#apropos">À propos</a></li>
+<li><a href="#competences">Compétences</a></li>
+<li><a href="#projets">Projets</a></li>
+<li><a href="#videos">Vidéos</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+</nav>
+
+<div class="menu-btn" id="menuBtn">
+☰
+</div>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="accueil">
+
+<div class="container hero-content">
+
+<div>
+
+<span class="badge">
+Professeur de Mathématiques
+</span>
+
+<h1>
+Les mathématiques<br>
+<strong>autrement.</strong>
+</h1>
+
+<p>
+Je suis <strong>B. Sabir</strong>, professeur de mathématiques
+au collège. Je crée des ressources numériques, des exercices
+interactifs et des applications éducatives pour rendre
+les mathématiques plus simples et accessibles.
+</p>
+
+<div class="buttons">
+
+<a href="#projets" class="btn btn-primary">
+Voir mes projets
+</a>
+
+<a href="#contact" class="btn btn-outline">
+Me contacter
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-card">
+
+<div class="math-symbol">
+∑
+</div>
+
+<h3>
+Mathématiques & Innovation
+</h3>
+
+<p>
+Enseignement • Numérique • Applications éducatives
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about" id="apropos">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>À propos</span>
+
+<h2>Qui suis-je ?</h2>
+
+<p>
+Un professeur passionné par les mathématiques et les nouvelles technologies.
+</p>
+
+</div>
+
+
+<div class="about-grid">
+
+<div>
+
+<h3>
+Professeur de mathématiques
+</h3>
+
+<p>
+J'enseigne les mathématiques au collège et j'accompagne
+les élèves dans la compréhension des notions essentielles
+à travers des méthodes simples, progressives et adaptées
+à leurs besoins.
+</p>
+
+<br>
+
+<p>
+Je m'intéresse également au numérique éducatif et à la
+création d'outils permettant aux élèves de travailler
+plus facilement en autonomie.
+</p>
+
+</div>
+
+
+<div class="about-box">
+
+<h3>Mon parcours</h3>
+
+<ul class="about-list">
+
+<li>
+<strong>Profession :</strong>
+Professeur de mathématiques
+</li>
+
+<li>
+<strong>Niveau :</strong>
+Enseignement secondaire collégial
+</li>
+
+<li>
+<strong>Formation :</strong>
+Master en Business Intelligence
+</li>
+
+<li>
+<strong>Domaine :</strong>
+Mathématiques & numérique éducatif
+</li>
+
+<li>
+<strong>Projet :</strong>
+Création d'applications éducatives
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     COMPETENCES
+========================= -->
+
+<section id="competences">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Mes compétences</span>
+
+<h2>Ce que je fais</h2>
+
+</div>
+
+
+<div class="services-grid">
+
+
+<div class="service-card">
+
+<div class="icon">📐</div>
+
+<h3>Enseignement des mathématiques</h3>
+
+<p>
+Cours, exercices, évaluations et accompagnement
+des élèves du collège.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="icon">💻</div>
+
+<h3>Éducation numérique</h3>
+
+<p>
+Création de ressources pédagogiques numériques
+et de contenus interactifs.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="icon">📱</div>
+
+<h3>Applications éducatives</h3>
+
+<p>
+Conception d'applications simples pour faciliter
+l'apprentissage et la révision.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="icon">🎥</div>
+
+<h3>Création de contenu</h3>
+
+<p>
+Vidéos pédagogiques, fiches de révision,
+exercices et défis mathématiques.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="icon">📊</div>
+
+<h3>Business Intelligence</h3>
+
+<p>
+Analyse de données, visualisation et outils
+d'aide à la décision.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="icon">🧩</div>
+
+<h3>Pédagogie</h3>
+
+<p>
+Simplifier les notions complexes et développer
+l'autonomie des élèves.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section class="projects" id="projets">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Portfolio</span>
+
+<h2>Mes projets</h2>
+
+<p>
+Quelques exemples de projets pédagogiques et numériques.
+</p>
+
+</div>
+
+
+<div class="projects-grid">
+
+
+<div class="project-card">
+
+<div class="project-image">
+📱
+</div>
+
+<div class="project-content">
+
+<h3>Math Collège</h3>
+
+<p>
+Application éducative destinée aux élèves du collège :
+cours, exercices, tests et ressources pédagogiques.
+</p>
+
+<div class="tags">
+
+<span class="tag">Android</span>
+<span class="tag">Maths</span>
+<span class="tag">Éducation</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="project-card">
+
+<div class="project-image">
+🧮
+</div>
+
+<div class="project-content">
+
+<h3>Calcul de moyenne</h3>
+
+<p>
+Outil permettant aux élèves de calculer facilement
+leur moyenne scolaire et de suivre leurs résultats.
+</p>
+
+<div class="tags">
+
+<span class="tag">JavaScript</span>
+<span class="tag">Calcul</span>
+<span class="tag">Collège</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="project-card">
+
+<div class="project-image">
+📈
+</div>
+
+<div class="project-content">
+
+<h3>Défis Math Express</h3>
+
+<p>
+Une série de petits défis mathématiques destinés
+à développer le raisonnement et la rapidité.
+</p>
+
+<div class="tags">
+
+<span class="tag">YouTube</span>
+<span class="tag">Shorts</span>
+<span class="tag">Maths</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="project-card">
+
+<div class="project-image">
+📊
+</div>
+
+<div class="project-content">
+
+<h3>Projet Statistiques</h3>
+
+<p>
+Activités de collecte, organisation et représentation
+de données pour les élèves de 3AC.
+</p>
+
+<div class="tags">
+
+<span class="tag">Statistiques</span>
+<span class="tag">3AC</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="project-card">
+
+<div class="project-image">
+📚
+</div>
+
+<div class="project-content">
+
+<h3>Fiches pédagogiques</h3>
+
+<p>
+Création de fiches, exercices et supports de révision
+pour accompagner les apprentissages.
+</p>
+
+<div class="tags">
+
+<span class="tag">PDF</span>
+<span class="tag">Cours</span>
+<span class="tag">Exercices</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="project-card">
+
+<div class="project-image">
+🧠
+</div>
+
+<div class="project-content">
+
+<h3>Ressources numériques</h3>
+
+<p>
+Une collection de ressources interactives pour
+apprendre les mathématiques autrement.
+</p>
+
+<div class="tags">
+
+<span class="tag">HTML</span>
+<span class="tag">CSS</span>
+<span class="tag">JavaScript</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     STATS
+========================= -->
+
+<section class="stats">
+
+<div class="container">
+
+<div class="stats-grid">
+
+<div class="stat">
+
+<h3>3</h3>
+
+<p>Niveaux du collège</p>
+
+</div>
+
+
+<div class="stat">
+
+<h3>20+</h3>
+
+<p>Ressources créées</p>
+
+</div>
+
+
+<div class="stat">
+
+<h3>5+</h3>
+
+<p>Projets numériques</p>
+
+</div>
+
+
+<div class="stat">
+
+<h3>∞</h3>
+
+<p>Passion pour les maths</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     VIDEOS
+========================= -->
+
+<section id="videos">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Contenu</span>
+
+<h2>Mes vidéos</h2>
+
+<p>
+Des explications simples et rapides pour comprendre
+les mathématiques.
+</p>
+
+</div>
+
+
+<div class="video-grid">
+
+
+<div class="video-card">
+
+<div class="video-thumb">
+▶️
+</div>
+
+<div class="video-content">
+
+<h3>Défi Math Express</h3>
+
+<p>
+Un petit défi pour tester votre raisonnement mathématique.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="video-card">
+
+<div class="video-thumb">
+▶️
+</div>
+
+<div class="video-content">
+
+<h3>Astuce Math</h3>
+
+<p>
+Des méthodes simples pour résoudre les exercices.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="video-card">
+
+<div class="video-thumb">
+▶️
+</div>
+
+<div class="video-content">
+
+<h3>Révision 3AC</h3>
+
+<p>
+Les notions importantes à maîtriser avant les examens.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact" id="contact">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Contact</span>
+
+<h2>Travaillons ensemble</h2>
+
+<p>
+Une question, une collaboration ou un projet éducatif ?
+N'hésitez pas à me contacter.
+</p>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<div class="contact-info">
+
+<div class="contact-item">
+
+<strong>📧 Email</strong>
+
+<p>
+contact@exemple.com
+</p>
+
+</div>
+
+
+<div class="contact-item">
+
+<strong>📱 Téléphone</strong>
+
+<p>
+0682616720
+</p>
+
+</div>
+
+
+<div class="contact-item">
+
+<strong>📍 Localisation</strong>
+
+<p>
+Maroc
+</p>
+
+</div>
+
+
+<div class="contact-item">
+
+<strong>💼 Domaines</strong>
+
+<p>
+Mathématiques • Éducation numérique • BI
+</p>
+
+</div>
+
+</div>
+
+
+<div class="contact-form">
+
+<form id="contactForm">
+
+<div class="form-group">
+
+<label>Nom</label>
+
+<input
+type="text"
+id="name"
+placeholder="Votre nom"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Email</label>
+
+<input
+type="email"
+id="email"
+placeholder="Votre email"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Message</label>
+
+<textarea
+id="message"
+placeholder="Votre message..."
+required></textarea>
+
+</div>
+
+
+<button class="btn btn-primary" type="submit">
+Envoyer le message
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="container">
+
+<h3>
+B. Sabir
+</h3>
+
+<p>
+Professeur de mathématiques • Éducation numérique
+</p>
+
+
+<div class="socials">
+
+<a href="#" aria-label="Facebook">f</a>
+
+<a href="#" aria-label="YouTube">▶</a>
+
+<a href="#" aria-label="GitHub">◉</a>
+
+<a href="#" aria-label="LinkedIn">in</a>
+
+</div>
+
+
+<p>
+© <span id="year"></span> B. Sabir — Tous droits réservés.
+</p>
+
+</div>
+
+</footer>
+
+
+<button id="topBtn">
+↑
+</button>
+
+
+<script>
+
+/* =========================
+   MENU MOBILE
+========================= */
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+
+    navLinks.classList.toggle("active");
+
+});
+
+
+/* Fermer le menu après clic */
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navLinks.classList.remove("active");
+
+    });
+
+});
+
+
+/* =========================
+   BOUTON RETOUR EN HAUT
+========================= */
+
+const topBtn = document.getElementById("topBtn");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 400){
+
+        topBtn.style.display = "block";
+
+    }else{
+
+        topBtn.style.display = "none";
+
+    }
+
+});
+
+
+topBtn.addEventListener("click", () => {
+
+    window.scrollTo({
+
+        top:0,
+        behavior:"smooth"
+
+    });
+
+});
+
+
+/* =========================
+   FORMULAIRE
+========================= */
+
+document.getElementById("contactForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const name =
+        document.getElementById("name").value;
+
+    alert(
+        "Merci " + name +
+        " ! Votre message a bien été préparé."
+    );
+
+    this.reset();
+
+});
+
+
+/* =========================
+   ANNÉE AUTOMATIQUE
+========================= */
+
+document.getElementById("year")
+.textContent = new Date().getFullYear();
+
+
+/* =========================
+   ANIMATION APPARITION
+========================= */
+
+const observer = new IntersectionObserver(
+
+    entries => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold:.15
+    }
+
+);
+
+
+document.querySelectorAll(
+    ".service-card, .project-card, .video-card"
+).forEach(card => {
+
+    card.style.opacity = "0";
+    card.style.transform = "translateY(25px)";
+    card.style.transition = "all .6s ease";
+
+    observer.observe(card);
+
+});
+
+</script>
+
+</body>
+</html>
+```
