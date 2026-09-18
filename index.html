@@ -114,8 +114,7 @@ header{
     min-height:100vh;
     display:flex;
     align-items:center;
-    background:
-        linear-gradient(135deg,#f1fbf9,#ffffff 60%);
+    background:linear-gradient(135deg,#f1fbf9,#ffffff 60%);
     padding-top:72px;
 }
 
@@ -144,7 +143,7 @@ header{
     margin-bottom:20px;
 }
 
-.hero h1 span{
+.hero h1 strong{
     color:var(--primary);
 }
 
@@ -166,6 +165,8 @@ header{
     font-weight:bold;
     transition:.3s;
     display:inline-block;
+    border:none;
+    cursor:pointer;
 }
 
 .btn-primary{
@@ -513,11 +514,31 @@ section{
     border:1px solid #ddd;
     border-radius:8px;
     font-family:inherit;
+    font-size:15px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+    outline:none;
+    border-color:var(--primary);
 }
 
 .form-group textarea{
     height:130px;
     resize:none;
+}
+
+/* =========================
+   MESSAGE SUCCESS
+========================= */
+
+.form-note{
+    margin-top:15px;
+    padding:12px;
+    border-radius:8px;
+    background:#e8f8f5;
+    color:var(--secondary);
+    font-size:14px;
 }
 
 /* =========================
@@ -1365,17 +1386,27 @@ Mathématiques • Éducation numérique • BI
 </div>
 
 
+<!-- =========================
+     FORMULAIRE FONCTIONNEL
+========================= -->
+
 <div class="contact-form">
 
-<form id="contactForm">
+<form
+    action="https://formspree.io/f/TON_ID_FORMULAIRE"
+    method="POST"
+>
 
 <div class="form-group">
 
-<label>Nom</label>
+<label for="name">
+Nom
+</label>
 
 <input
 type="text"
 id="name"
+name="name"
 placeholder="Votre nom"
 required>
 
@@ -1384,11 +1415,14 @@ required>
 
 <div class="form-group">
 
-<label>Email</label>
+<label for="email">
+Email
+</label>
 
 <input
 type="email"
 id="email"
+name="email"
 placeholder="Votre email"
 required>
 
@@ -1397,10 +1431,29 @@ required>
 
 <div class="form-group">
 
-<label>Message</label>
+<label for="subject">
+Sujet
+</label>
+
+<input
+type="text"
+id="subject"
+name="subject"
+placeholder="Objet de votre message"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="message">
+Message
+</label>
 
 <textarea
 id="message"
+name="message"
 placeholder="Votre message..."
 required></textarea>
 
@@ -1408,10 +1461,15 @@ required></textarea>
 
 
 <button class="btn btn-primary" type="submit">
-Envoyer le message
+✉️ Envoyer le message
 </button>
 
 </form>
+
+<p class="form-note">
+📩 Votre message sera transmis à l'adresse e-mail configurée
+sur votre compte Formspree.
+</p>
 
 </div>
 
@@ -1529,28 +1587,6 @@ topBtn.addEventListener("click", () => {
 
 
 /* =========================
-   FORMULAIRE
-========================= */
-
-document.getElementById("contactForm")
-.addEventListener("submit", function(e){
-
-    e.preventDefault();
-
-    const name =
-        document.getElementById("name").value;
-
-    alert(
-        "Merci " + name +
-        " ! Votre message a bien été préparé."
-    );
-
-    this.reset();
-
-});
-
-
-/* =========================
    ANNÉE AUTOMATIQUE
 ========================= */
 
@@ -1602,4 +1638,4 @@ document.querySelectorAll(
 
 </body>
 </html>
-```
+
